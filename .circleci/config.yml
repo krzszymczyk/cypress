@@ -1,8 +1,16 @@
-version: 2
+version: 2.1
+orbs:
+  # use Cypress orb from CircleCI registry
+  cypress: cypress-io/cypress@1.11.0
+
+executors:
+  mac:
+    macos:
+      xcode: "10.1.0"
+
 jobs:
-  build:
-    docker:
-      - image: circleci/node:10
+  release:
+    executor: cypress/base-10
 
     working_directory: ~/repo
 
@@ -23,5 +31,5 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm install
-      - run: npx cypress run --record --key 00c14645-d80d-4747-a200-6ce8f94b3cb9
+
+      - run: npm cypress run --record --key 00c14645-d80d-4747-a200-6ce8f94b3cb9
