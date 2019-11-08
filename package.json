@@ -1,0 +1,30 @@
+{
+  "name": "cypresstestsuite",
+  "version": "1.0.0",
+  "description": "Sample API test run",
+  "main": "index.js",
+  "scripts": {
+    "execute-test-suite": "npm run run-tests && npm run publish-report",
+    "run-tests": "npx cypress run -s .\\cypress\\integration\\configStudio\\*.js",
+    "publish-report": "npm run combine-reports && npm run generate-report && npm run move-report && npm run delete-prev-results",
+    "combine-reports": "mochawesome-merge --reportDir ./cypress/reports/mocha/ > ./cypress/reports/mocha/report.json",
+    "generate-report": "marge ./cypress/reports/mocha/report.json",
+    "move-report": "move mochawesome-report.html ./mochawesome-report",
+    "delete-prev-results": "del /Q .\\cypress\\reports\\mocha\\*"
+  },
+  "author": "Krzysztof Szymczyk",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^3.5.0",
+    "cypress-multi-reporters": "^1.2.1",
+    "cypress-wait-until": "^1.4.1",
+    "cypress-xpath": "^1.4.0",
+    "mocha": "^6.1.4",
+    "mochawesome": "^4.0.0",
+    "mochawesome-merge": "^2.0.1",
+    "mochawesome-report-generator": "^4.0.1",
+    "moment": "^2.24.0",
+    "mongodb": "^3.3.3"
+  },
+  "dependencies": {}
+}
