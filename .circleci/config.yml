@@ -23,5 +23,5 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm test
+      - run: npm install
       - run: npx cypress run --record --key 00c14645-d80d-4747-a200-6ce8f94b3cb9
