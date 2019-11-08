@@ -6,4 +6,4 @@ workflows:
     jobs:
       - cypress/run:
           record: true
-          key: ff8e402a-5212-42be-a79e-38aef6ff8ced
+            key: ff8e402a-5212-42be-a79e-38aef6ff8ced
