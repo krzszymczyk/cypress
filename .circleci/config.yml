@@ -10,6 +10,6 @@ workflows:
             - cypress/install
           record: true
           parallel: true
-          parallelism: 5
-          group: 5 machines
+          parallelism: 4
+          group: 4 machines
           command: npx cypress run --record --key ff8e402a-5212-42be-a79e-38aef6ff8ced --parallel
