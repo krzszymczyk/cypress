@@ -23,7 +23,7 @@
     "mochawesome": "^4.0.0",
     "mochawesome-merge": "^2.0.1",
     "mochawesome-report-generator": "^4.0.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongodb": "^3.3.3"
   },
   "dependencies": {}
